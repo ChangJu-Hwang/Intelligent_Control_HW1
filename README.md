@@ -1,7 +1,7 @@
 # Intelligent_Control_HW1
 Homework for 2023-2 Intelligent Control.
 
-Details: Implement 8x3x8 Artificial Neural Network
+Details: Implement Artificial Neural Network.
 
 ## Dependencies
 The code requires the external library [yaml-cpp](https://github.com/jbeder/yaml-cpp). If you are using Ubuntu, you can install it simply by
