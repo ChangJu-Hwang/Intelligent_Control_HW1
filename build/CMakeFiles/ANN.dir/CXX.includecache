@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ANN/Network.hpp
+vector
+-
+ANN/Node.hpp
+../include/ANN/ANN/Node.hpp
+
+../include/ANN/Node.hpp
+vector
+-
+memory
+-
+
+/home/changju/HW/Intelligent_Control_HW1/src/Network.cpp
+ANN/Network.hpp
+/home/changju/HW/Intelligent_Control_HW1/src/ANN/Network.hpp
+iostream
+-
+yaml-cpp/yaml.h
+-
+
+/home/changju/HW/Intelligent_Control_HW1/src/Node.cpp
+ANN/Node.hpp
+/home/changju/HW/Intelligent_Control_HW1/src/ANN/Node.hpp
+iostream
+-
+random
+-
+cmath
+-
+
+/home/changju/HW/Intelligent_Control_HW1/src/main.cpp
+iostream
+-
+ANN/Network.hpp
+/home/changju/HW/Intelligent_Control_HW1/src/ANN/Network.hpp
+
