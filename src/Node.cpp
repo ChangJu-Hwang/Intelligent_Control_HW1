@@ -58,11 +58,6 @@ void Node::update_error_term()
 {
     error_term_ = output_ * (1 - output_) * error_term_;
 
-    // // Todo: Delete
-    // {
-    //     std::cout << error_term_ << " ";
-    // }
-
     for (auto parentPair : parents_)
     {
         Node::SharedPtr parent = parentPair.first;
@@ -80,11 +75,6 @@ void Node::update_weight(const double _learning_weight)
         Node::SharedPtr parent = parentPair.first;
 
         parentPair.second += _learning_weight * error_term_ * parent->getOutput();
-
-        // // Todo: Delete
-        // {
-        //     std::cout << parentPair.second << " ";
-        // }
     }
 
     initVariables();

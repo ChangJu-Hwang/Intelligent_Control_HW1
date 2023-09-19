@@ -122,11 +122,6 @@ void Network::learn_once(const int _dataIdx)
     front_propagation(_dataIdx);
     update_error_terms(_dataIdx);
     update_weights();
-
-    // // Todo: Delete
-    // {
-    //     std::cout << std::endl;
-    // }
 }
 
 void Network::front_propagation(const int _dataIdx)
@@ -135,30 +130,6 @@ void Network::front_propagation(const int _dataIdx)
 
     for (const auto &output_node : network_.back())
         output_node->getOutput();
-
-    // // Todo: Delete
-    // {
-    //     std::cout << "Input : ";
-    //     for (const auto inputNode : network_[0])
-    //     {
-    //         std::cout << inputNode->getOutput() << " ";
-    //     }
-    //     std::cout << std::endl;
-
-    //     std::cout << "Hidden: ";
-    //     for (const auto hiddenNode : network_[1])
-    //     {
-    //         std::cout << hiddenNode->getOutput() << " ";
-    //     }
-    //     std::cout << std::endl;
-
-    //     std::cout << "Output: ";
-    //     for (const auto outputNode : network_.back())
-    //     {
-    //         std::cout << outputNode->getOutput() << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
 }
 
 void Network::setInputs(const int _dataIdx)
@@ -178,11 +149,6 @@ void Network::setInputs(const int _dataIdx)
 
 void Network::update_error_terms(const int _dataIdx)
 {
-    // // Todo: Delete
-    // {
-    //     std::cout << "Error: ";
-    // }
-
     for (int nodeIdx = 0; nodeIdx < network_.back().size(); nodeIdx++)
     {
         Node::SharedPtr outputNode = network_.back().at(nodeIdx);
@@ -191,29 +157,12 @@ void Network::update_error_terms(const int _dataIdx)
         double node_output = outputNode->getOutput();
 
         outputNode->add_error_term(target_output - node_output);
-
-        // // Todo: Delete
-        // {
-        //     std::cout << target_output - node_output << " ";
-        // }
     }
-    // // Todo: Delete
-    // {
-    //     std::cout << std::endl;
-    // }
 
     for (auto layerIter = network_.rbegin(); layerIter != (network_.rend() - 1); ++layerIter)
     {
-        // // Todo: Delete
-        // {
-        //     std::cout << "Error_Term: ";
-        // }
         for (auto &node : *(layerIter))
             node->update_error_term();
-        // // Todo: Delete
-        // {
-        //     std::cout << std::endl;
-        // }
     }
 }
 
@@ -221,22 +170,8 @@ void Network::update_weights()
 {
     for (auto layerIter = network_.rbegin(); layerIter != (network_.rend() - 1); ++layerIter)
     {
-        // // Todo: Delete
-        // {
-        //     std::cout << "Weight:";
-        // }
         for (auto &node : *(layerIter))
-        {
-            // // Todo: Delete
-            // {
-            //     std::cout << std::endl;
-            // }
             node->update_weight(learning_rate_);
-        }
-        // // Todo: Delete
-        // {
-        //     std::cout << std::endl;
-        // }
     }
 }
 

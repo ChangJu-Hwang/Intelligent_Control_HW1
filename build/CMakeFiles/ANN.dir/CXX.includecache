@@ -36,9 +36,3 @@ random
 cmath
 -
 
-/home/changju/HW/Intelligent_Control_HW1/src/main.cpp
-iostream
--
-ANN/Network.hpp
-/home/changju/HW/Intelligent_Control_HW1/src/ANN/Network.hpp
-
