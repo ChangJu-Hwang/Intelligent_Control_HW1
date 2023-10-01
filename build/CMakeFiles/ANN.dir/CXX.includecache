@@ -11,11 +11,19 @@ vector
 -
 ANN/Node.hpp
 ../include/ANN/ANN/Node.hpp
+ANN/logger.hpp
+../include/ANN/ANN/logger.hpp
 
 ../include/ANN/Node.hpp
 vector
 -
 memory
+-
+
+../include/ANN/logger.hpp
+vector
+-
+unordered_map
 -
 
 /home/changju/HW/Intelligent_Control_HW1/src/Network.cpp
@@ -24,15 +32,5 @@ ANN/Network.hpp
 iostream
 -
 yaml-cpp/yaml.h
--
-
-/home/changju/HW/Intelligent_Control_HW1/src/Node.cpp
-ANN/Node.hpp
-/home/changju/HW/Intelligent_Control_HW1/src/ANN/Node.hpp
-iostream
--
-random
--
-cmath
 -
 

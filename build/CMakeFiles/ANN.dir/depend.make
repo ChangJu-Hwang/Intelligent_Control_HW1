@@ -3,12 +3,17 @@
 
 CMakeFiles/ANN.dir/src/Network.cpp.o: ../include/ANN/Network.hpp
 CMakeFiles/ANN.dir/src/Network.cpp.o: ../include/ANN/Node.hpp
+CMakeFiles/ANN.dir/src/Network.cpp.o: ../include/ANN/logger.hpp
 CMakeFiles/ANN.dir/src/Network.cpp.o: ../src/Network.cpp
 
 CMakeFiles/ANN.dir/src/Node.cpp.o: ../include/ANN/Node.hpp
 CMakeFiles/ANN.dir/src/Node.cpp.o: ../src/Node.cpp
 
+CMakeFiles/ANN.dir/src/logger.cpp.o: ../include/ANN/logger.hpp
+CMakeFiles/ANN.dir/src/logger.cpp.o: ../src/logger.cpp
+
 CMakeFiles/ANN.dir/src/main.cpp.o: ../include/ANN/Network.hpp
 CMakeFiles/ANN.dir/src/main.cpp.o: ../include/ANN/Node.hpp
+CMakeFiles/ANN.dir/src/main.cpp.o: ../include/ANN/logger.hpp
 CMakeFiles/ANN.dir/src/main.cpp.o: ../src/main.cpp
 

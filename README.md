@@ -28,3 +28,7 @@ cmake .. &&make
 ```shell script
 ./ANN
 ```
+#### 3. Visualize the result
+```shell script
+python3 ../script/visualize.py 
+```

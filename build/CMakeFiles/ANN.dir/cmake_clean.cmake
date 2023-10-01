@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "ANN.pdb"
   "CMakeFiles/ANN.dir/src/Network.cpp.o"
   "CMakeFiles/ANN.dir/src/Node.cpp.o"
+  "CMakeFiles/ANN.dir/src/logger.cpp.o"
   "CMakeFiles/ANN.dir/src/main.cpp.o"
 )
 

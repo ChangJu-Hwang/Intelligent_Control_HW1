@@ -13,7 +13,9 @@ void Network::run()
     for (int epoch = 0; epoch < epochs_; epoch++)
     {
         for (int iteration = 0; iteration < dataSet_.size(); iteration++)
+        {
             learn_once(iteration);
+        }
     }
 
     for (int dataIdx = 0; dataIdx < dataSet_.size(); dataIdx++)
@@ -21,6 +23,8 @@ void Network::run()
         compareInputOutput(dataIdx);
         std::cout << "============================================" << std::endl;
     }
+
+    logger_->export_SumOfSquaredErrors();
 }
 
 void Network::initVariables()
@@ -36,6 +40,8 @@ void Network::initVariables()
 
     learning_rate_ = 0.0;
     epochs_ = 0;
+
+    logger_ = std::make_shared<Logger>();
 }
 
 void Network::importSettings()
@@ -120,6 +126,18 @@ void Network::connectLayer()
 void Network::learn_once(const int _dataIdx)
 {
     front_propagation(_dataIdx);
+
+    // Loger
+    Data output;
+    {
+        output.clear();
+
+        for (const auto outputNode : network_.back())
+            output.push_back(outputNode->getOutput());
+    }
+    logger_->record_SumOfSquaredErrors(
+        _dataIdx, dataSet_[_dataIdx].second, output);
+
     update_error_terms(_dataIdx);
     update_weights();
 }

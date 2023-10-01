@@ -1,3 +1,6 @@
 /home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/rebuild_cache.dir
 /home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/edit_cache.dir
+/home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/test.dir
 /home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/ANN.dir
+/home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/ANN_uninstall.dir
+/home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/uninstall.dir

@@ -3,11 +3,11 @@
 #include <vector>
 
 #include "ANN/Node.hpp"
+#include "ANN/logger.hpp"
 
 namespace ANN
 {
     using Layer = std::vector<ANN::Node::SharedPtr>;
-    using Data = std::vector<double>;
 
     class Network
     {
@@ -57,6 +57,8 @@ namespace ANN
         int epochs_;
 
         std::vector<std::pair<Data, Data>> dataSet_;
+
+        std::shared_ptr<Logger> logger_;
 
     public:
         Network(

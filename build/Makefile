@@ -78,6 +78,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles /home/changju/HW/Intelligent_Control_HW1/build/CMakeFiles/progress.marks
@@ -122,6 +133,32 @@ ANN: cmake_check_build_system
 ANN/fast:
 	$(MAKE) -f CMakeFiles/ANN.dir/build.make CMakeFiles/ANN.dir/build
 .PHONY : ANN/fast
+
+#=============================================================================
+# Target rules for targets named ANN_uninstall
+
+# Build rule for target.
+ANN_uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ANN_uninstall
+.PHONY : ANN_uninstall
+
+# fast build rule for target.
+ANN_uninstall/fast:
+	$(MAKE) -f CMakeFiles/ANN_uninstall.dir/build.make CMakeFiles/ANN_uninstall.dir/build
+.PHONY : ANN_uninstall/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
 
 src/Network.o: src/Network.cpp.o
 
@@ -177,6 +214,33 @@ src/Node.cpp.s:
 	$(MAKE) -f CMakeFiles/ANN.dir/build.make CMakeFiles/ANN.dir/src/Node.cpp.s
 .PHONY : src/Node.cpp.s
 
+src/logger.o: src/logger.cpp.o
+
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cpp.o:
+	$(MAKE) -f CMakeFiles/ANN.dir/build.make CMakeFiles/ANN.dir/src/logger.cpp.o
+.PHONY : src/logger.cpp.o
+
+src/logger.i: src/logger.cpp.i
+
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) -f CMakeFiles/ANN.dir/build.make CMakeFiles/ANN.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) -f CMakeFiles/ANN.dir/build.make CMakeFiles/ANN.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -212,13 +276,19 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... ANN"
+	@echo "... ANN_uninstall"
+	@echo "... uninstall"
 	@echo "... src/Network.o"
 	@echo "... src/Network.i"
 	@echo "... src/Network.s"
 	@echo "... src/Node.o"
 	@echo "... src/Node.i"
 	@echo "... src/Node.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
